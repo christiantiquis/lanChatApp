@@ -9,7 +9,6 @@ import static chatapplication.MulticastClient.name;
 import static chatapplication.MulticastClient.s;
 import java.net.*;
 import java.io.*;
-import java.util.*;
 import javax.swing.JOptionPane;
 
 
@@ -19,7 +18,11 @@ import javax.swing.JOptionPane;
  * @author Pinder
  */
 public  class MulticastClient extends javax.swing.JFrame {
- public static String name;
+ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+public static String name;
 public static String message;
 public static MulticastSocket socket=null;
 public static InetAddress address ;  

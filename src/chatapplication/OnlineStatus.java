@@ -59,7 +59,7 @@ public class OnlineStatus implements Runnable{
 }class ReceiveOnlineStatus implements Runnable{
 InetAddress address=null;
 MulticastSocket socket=null;
-public static ArrayList al=new ArrayList();
+public static ArrayList<String> al=new ArrayList<String>();
 ReceiveOnlineStatus(){
      try{
        socket = new MulticastSocket(5000) ;
@@ -69,7 +69,7 @@ ReceiveOnlineStatus(){
       socket.joinGroup(address);
       }
         catch(Exception e)
-        {System.err.println("error");
+        {System.out.println("error");
         }
 }
 
@@ -77,7 +77,7 @@ ReceiveOnlineStatus(){
 
 @Override
 public void run(){
-    al=new ArrayList();
+    al=new ArrayList<String>();
 while(true){ 
     
    
@@ -92,7 +92,7 @@ while(true){
    
 String name=new String(packet.getData(), 0, packet.getLength());
 if(name.equals("exited"))
-    al=new ArrayList();
+    al=new ArrayList<String>();
      
        
 if(!al.contains(name)&& !name.equals("exited"))
